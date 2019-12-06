@@ -26,7 +26,7 @@ stage('Archive Package') {
 archive 'target/*.jar'
 }
 
-stage('Deploy Code info Docker Env.') {
+stage('Deploy Code into Docker Env.') {
 sh label: 'Docker', script: 'docker-compose up -d --build'
 }
    
