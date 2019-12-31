@@ -2,7 +2,7 @@
 FROM ubuntu:16.04
 
 # Maintainer
-MAINTAINER Amit Vashist <amitvashist7@gmail.com>
+MAINTAINER Radhika <radhikaswamy34@gmail.com>
 
 # Apt-Get Repo
 RUN apt-get update
