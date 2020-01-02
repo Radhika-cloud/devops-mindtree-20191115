@@ -37,10 +37,8 @@ resource "null_resource" "remote-exec-1" {
 
 resource "null_resource" "ansible-main" {
 provisioner "local-exec" {
-  command = <<EOT
-        sleep 100;
+  command = "sleep 100;
         export ANSIBLE_HOST_KEY_CHECKING=False;
-        ansible-playbook -e  sshKey=${var.pvt_key} ./ansible/setup-backend.yaml -u ubuntu -v
-    EOT
+        ansible-playbook -e  sshKey=${var.pvt_key} ./ansible/setup-backend.yaml -u ubuntu -v"
 }
 }
