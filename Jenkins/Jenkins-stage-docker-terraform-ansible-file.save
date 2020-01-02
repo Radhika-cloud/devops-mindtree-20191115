@@ -31,7 +31,6 @@ sh label: 'Docker', script: 'docker-compose up -d --build'
    
 stage('Geting Ready For Ansible') {
 sh label: 'Docker', script: 'cp -rf target/*.jar ../../../terraform/ansible/templates/atmosphere-v1.jar'
-sh label: 'Jenkins', script: "echo '<h1> TASK BUILD ID: ${env.BUILD_DISPLAY_NAME}</h1>' > ../../../terraform/ansible/templates/jenkins.html"
 }   
     
 stage('Deploy to Prod.') {
