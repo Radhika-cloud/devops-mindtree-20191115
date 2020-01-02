@@ -37,8 +37,6 @@ resource "null_resource" "remote-exec-1" {
 
 resource "null_resource" "ansible-main" {
 provisioner "local-exec" {
-  command = "sleep 100;
-        export ANSIBLE_HOST_KEY_CHECKING=False;
-        ansible-playbook -e  sshKey=${var.pvt_key} ./ansible/setup-backend.yaml -u ubuntu -v"
+  command = "sleep 100; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook  -u ubuntu sshKey=${var.pvt_key} -i '${aws_instance.backend.public_ip},' ./ansible/setup-backend.yaml"
 }
 }
